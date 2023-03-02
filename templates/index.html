@@ -1,260 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your New Flask App</title>
 
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Almarai:wght@800&amp;family=Nunito+Sans&amp;display=swap" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="A simple resume template built with Flask, based on Start Bootstrap resume template.">
+  <meta name="author" content="Rodolfo Ferro <rodolfoferroperez@gmail.com>">
+
+  <title>Portfolio - {{ data.profile.first_name }} {{ data.profile.last_name }}</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/resume.css" rel="stylesheet">
+  <link rel="shortcut icon" href="https://avatars3.githubusercontent.com/u/36435547" type="image/x-icon">
+
 </head>
 
-<body>
-  <div class="container">
-    <div class="content">
-      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjY3IDE3NS4yIDE3Ni40IDE3Ni41IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDY3IDE3NS4yIDE3Ni40IDE3Ni41OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8ZyBpZD0iWE1MSURfMjI5XyI+DQoJPGcgaWQ9IlhNTElEXzY5MF8iPg0KCQk8ZyBpZD0iWE1MSURfNjkxXyI+DQoJCQk8Zz4NCgkJCQk8ZyBpZD0iWE1MSURfNDRfIj4NCgkJCQkJPGcgaWQ9IlhNTElEXzQ4XyI+DQoJCQkJCQk8cGF0aCBpZD0iWE1MSURfNDlfIiBjbGFzcz0ic3QwIiBkPSJNMTU1LjIsMzUxLjd2LTM0LjJjMzYuMiwwLDY0LjMtMzUuOSw1MC40LTc0Yy01LjEtMTQuMS0xNi40LTI1LjQtMzAuNS0zMC41DQoJCQkJCQkJYy0zOC4xLTEzLjgtNzQsMTQuMi03NCw1MC40bDAsMEg2N2MwLTU3LjcsNTUuOC0xMDIuNywxMTYuMy04My44YzI2LjQsOC4zLDQ3LjUsMjkuMyw1NS43LDU1LjcNCgkJCQkJCQlDMjU3LjksMjk1LjksMjEzLDM1MS43LDE1NS4yLDM1MS43eiIvPg0KCQkJCQk8L2c+DQoJCQkJCTxwb2x5Z29uIGlkPSJYTUxJRF80N18iIGNsYXNzPSJzdDAiIHBvaW50cz0iMTU1LjMsMzE3LjYgMTIxLjMsMzE3LjYgMTIxLjMsMjgzLjYgMTIxLjMsMjgzLjYgMTU1LjMsMjgzLjYgMTU1LjMsMjgzLjYgCQkJCQkNCgkJCQkJCSIvPg0KCQkJCQk8cG9seWdvbiBpZD0iWE1MSURfNDZfIiBjbGFzcz0ic3QwIiBwb2ludHM9IjEyMS4zLDM0My44IDk1LjEsMzQzLjggOTUuMSwzNDMuOCA5NS4xLDMxNy42IDEyMS4zLDMxNy42IAkJCQkJIi8+DQoJCQkJCTxwYXRoIGlkPSJYTUxJRF80NV8iIGNsYXNzPSJzdDAiIGQ9Ik05NS4xLDMxNy42SDczLjJsMCwwdi0yMS45bDAsMGgyMS45bDAsMFYzMTcuNnoiLz4NCgkJCQk8L2c+DQoJCQk8L2c+DQoJCTwvZz4NCgk8L2c+DQo8L2c+DQo8L3N2Zz4NCg==" alt="DigitalOcean Logo" width="100" />
-      <h1>Welcome to your new <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask App</a>!</h1>
+<body id="page-top">
 
-      <p>
-        This application is an example of how to deploy a Flask Application to DigitalOcean's App
-        Platform. Check out their <a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">documentation</a> to
-        learn more about flask.
-      </p>
-
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none text-white subheading">{{ data.profile.first_name }} {{ data.profile.last_name }}</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ data.profile.picture }}" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+        </li>
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="links">
-      <a href="https://github.com/MasonEgger/python-slackbot-sampleapp" target="_blank"
-        rel="noopener noreferrer"><strong>Sample Slackbot using Flask</strong>
-        <span>Learn how to build a Slackbot in Python</span>
-      </a>
-      <a href="https://www.digitalocean.com/docs/app-platform/languages-frameworks/python/" target="_blank"
-        rel="noopener noreferrer"><strong>DigitalOcean App Platform Docs for Flask</strong>
-        <span>DigitalOcean's reference documentation for Flask</span>
-      </a>
-      <a href="https://www.digitalocean.com/docs/app-platform/" target="_blank" rel="noopener noreferrer"><strong>App
-          Platform Documentation</strong><span>Learn about DigitalOcean's App Platform</span></a>
-      <a href="https://www.digitalocean.com/docs/droplets/how-to/" target="_blank" rel="noopener noreferrer"><strong>App
-          Platform API Documentation</strong>
-        <span>REST API Documentation for App Platform</span>
-      </a>
-    </div>
-  </div>
+  <div class="container-fluid p-0">
 
-  <div id="stripes">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0">{{ data.profile.first_name }}
+          <span class="text-primary">{{ data.profile.last_name }}</span>
+        </h1>
+        <div class="subheading mb-5">
+          {% for item in data.profile.contact.values() %}
+          {% if item != None %}
+          {{ item }} ·
+          {% endif %}
+          {% endfor %}
+          <a href="mailto:{{ data.profile.email }}">{{ data.profile.email }}</a>
+        </div>
+        <p class="lead mb-5">{{ data.profile.description }} </p>
+        <p> <img src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png"</p>
+        <div class="social-icons">
+        {% for key, value in data.social.items() %}
+        {% if value != None %}
+          {% if key == 'website' %}
+          <a href="{{ data.social.website }}" target="_blank">
+            <i class="fas fa-globe-americas"></i>
+          </a>
+          {% else %}
+          <a href="{{ value }}" target="_blank">
+            <i class="fab fa-{{ key }}"></i>
+          </a>
+          {% endif %}
+        {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+    </section>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <hr class="m-0">
 
-    body {
-      margin: 0;
-      padding: 50px;
-      min-height: 100vh;
-      position: relative;
-      color: #fff;
-      font-family: "Nunito Sans", sans-serif;
-      font-size: 19px;
-    }
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+      <div class="w-100">
+        <h2 class="mb-5">Skills</h2>
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Almarai", sans-serif;
-    }
+        <div class="subheading mb-3">Programming Languages</div>
+        <ul class="list-inline dev-icons">
+          {% for item in data.tools %}
+          <li class="list-inline-item">
+            <i class="fab fa-{{ item }}"></i>
+          </li>
+          {% endfor %}
+        </ul>
 
-    :root {
-      --background: linear-gradient(150deg,
-          #17acff 15%,
-          #016aff 70%,
-          #68a6ff 94%);
-      --first: #53f;
-      --second: #4553ff;
-      --third: #4f40ff;
-      --fourth: #25ddf5;
-      --fifth: #1fa2ff;
-    }
+        <div class="subheading mb-3">Skills / knowledge</div>
+        <ul class="fa-ul mb-0">
+          {% for item in data.extra_skills %}
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            {{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
 
-    #stripes {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100vw;
-      display: grid;
-      background: var(--background);
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      transform: skewY(-12deg);
-      transform-origin: 0;
-    }
+    <hr class="m-0">
 
-    #stripes span {
-      /* border: 1px solid #c00c00; */
-    }
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+      <div class="w-100">
+        <h2 class="mb-5">Experience</h2>
 
-    #stripes span:first-child {
-      grid-column: span 1;
-      background: var(--first);
-    }
+        {% for _, item in data.experience.items() %}
+        {% if _ != 'reference' %}
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">{{ item.position }}</h3>
+            <div class="subheading mb-3">{{ item.company }}</div>
+            <p>{{ item.description }}</p>
+            {% if item.link %}
+            <p><a href="{{ item.link }}">Reference link.</a></p>
+            {% endif %}
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">{{ item.from }} - {{ item.to }}</span>
+          </div>
+        </div>
+        {% else %}
+        <p>For a detailed reference about this section, please visit <a href="{{ item }}" target="_blank">this link</a>.</p>
+        {% endif %}
+        {% endfor %}
+      </div>
 
-    #stripes span:nth-child(2) {
-      grid-column: span 2;
-      background: var(--second);
-    }
+    </section>
 
-    #stripes span:nth-child(3) {
-      grid-column: span 2;
-      background: var(--third);
-    }
+    <hr class="m-0">
 
-    #stripes span:nth-child(4) {
-      grid-column: 6;
-      grid-row: 3;
-      background: var(--fourth);
-    }
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+      <div class="w-100">
+        <h2 class="mb-5">Education</h2>
 
-    #stripes span:nth-child(5) {
-      grid-column: span 2;
-      grid-row: 4;
-      background: var(--fifth);
-    }
+        {% for _, item in data.education.items() %}
+        {% if _ != 'reference' %}
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">{{ item.institution }}</h3>
+            <div class="subheading mb-3">{{ item.program }}</div>
+            <div>{{ item.description }}</div>
+            <p>{{ item.gpa }}</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">{{ item.from }} - {{ item.to }}</span>
+          </div>
+        </div>
+        {% else %}
+        <p>For a detailed reference about this section, please visit <a href="{{ item }}" target="_blank">this link</a>.</p>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </section>
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 50px 0;
-    }
+    <hr class="m-0">
 
-    .content {
-      text-align: center;
-    }
 
-    h1 {
-      font-size: 2.5rem;
-    }
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    h1 a {
-      color: #dbf1f5;
-    }
+  <!-- Plugin JavaScript -->
+  <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    h1 a:hover {
-      color: #7decff;
-    }
+  <!-- Custom scripts for this template -->
+  <script src="static/js/resume.min.js"></script>
 
-    p {
-      margin-bottom: 50px;
-    }
-     p a {
-      color:chartreuse;
-    }
-    
-    li {
-      text-align: left
-    }
-
-    code {
-      display: inline-block;
-      padding: 3px 6px;
-      margin-left: 3px;
-      margin-right: 3px;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      background: #1a2279;
-      color: #dbf1f5;
-    }
-
-    .links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .links a {
-      position: relative;
-      display: block;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 5px;
-      padding: 20px;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: #222;
-      transition: 0.3s ease all;
-      overflow: hidden;
-    }
-
-    .links a:before,
-    .links a:after {
-      font-size: 40px;
-      display: block;
-      position: absolute;
-    }
-
-    .links a:before {
-      content: "";
-      top: -80%;
-      right: -150px;
-      width: 250px;
-      height: 250px;
-      background: rgba(125, 236, 255, 0.6);
-      pointer-events: none;
-      transform: rotate(-25deg);
-      transition: 0.4s cubic-bezier(0.34, 0.31, 0, 1.81) transform;
-    }
-
-    .links a:after {
-      content: "👉";
-      top: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      right: 30px;
-      transform: translateX(80px);
-      transition: 0.3s cubic-bezier(0.34, 0.31, 0, 1.81) transform;
-    }
-
-    .links a:hover {
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
-    }
-
-    .links a:hover:before {
-      transform: rotate(-25deg) translateX(60px);
-    }
-
-    .links a:hover:after {
-      transform: none;
-    }
-
-    .links a strong,
-    .links a span {
-      position: relative;
-      z-index: 1;
-    }
-
-    .links a strong {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .links a span {
-      color: #787878;
-      font-size: 0.9rem;
-    }
-  </style>
 </body>
 
 </html>

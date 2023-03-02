@@ -1,0 +1,93 @@
+# Profile section
+profile:
+  first_name: Brian
+  last_name: Baltovski
+  picture: https://avatars.githubusercontent.com/u/121245996?s=400&u=95661e29bf616b8fa04382faaedda853c0e3d681&v=4   # Hosted picture
+  # picture: static/img/rodo_2021.png  # Local picture
+  contact:
+    address_one: Portland, Maine
+    address_two:
+    phone: ASK-4-IT!
+  email: brian.baltovski@gmail.com
+  description:
+    Experienced Penetration Tester with an interest in Application Security and the OWASP Top 10.
+
+# Social section
+social:
+  website:
+  github:
+  twitter:
+  linkedin:
+  facebook:
+  dev:
+  medium:
+
+
+# Experience section
+experience:
+  item7:
+    position: Lead Application Security Engineer
+    company: Fragomen
+    from: 2020
+    to: Present
+    description: >
+      Responsible for Penetration testing, Threat Detection, and Application Security.
+    link:
+  item6:
+    position: Senior Penetration Tester
+    company: Lares
+    from: 2019
+    to: 2020
+    description: Senior Application Security Engineer at a boutique Security Consulting organization.
+    link:
+  item5:
+    position: Application Security Engineer
+    company: Tyler Technologies
+    from: 2018
+    to: 2019
+    description: Responsible for conducting application security assessments against Tyler products and systems, maintaining metrics of vulnerabilities, and collaborating with development groups to triage and remediate.
+  item4:
+    position: Security Engineer
+    company: Winxnet
+    from: 2016
+    to: 2018
+    description: >
+      Performed external and internal penetration tests for clients. Managed SIEM and IDS/IPS.
+    link:
+
+
+# Education section
+education:
+  item1:
+    institution: Southern Maine Community College
+    program: Information Security
+    description: The program covers a wide range of topics including computer forensics, ethical hacking, laws, policies, network security and physically securing systems in a data center.
+    from: 2015
+    to: 2016
+
+
+
+
+
+
+
+# Skills section
+tools:
+  # Consider that the following are fa icons:
+  #   https://fontawesome.com/icons?d=gallery&s=brands
+  - python
+  - linux
+
+extra_skills:
+
+  - BurpSuite
+  - Kali Linux
+  - SAST
+  - DAST
+  - Web Security
+  - Threat Modelling
+  - OWASP Top 10
+
+
+
+
